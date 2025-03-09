@@ -2,6 +2,8 @@
 $color-primary: #55c57a;
 $color-primary-light: #7ed56f;
 $color-primary-dark: #28b485;
+$color-white: #fff;
+$color-grey-dark-1: #333;
 
 *,
 *::before,
@@ -59,7 +61,7 @@ body {
 }
 
 .heading-primary {
-  color: #fff;
+  color: $color-white;
   text-transform: uppercase;
   backface-visibility: hidden; /* Prevents the text from flickering when viewed from the back */
   margin-bottom: 6rem;
@@ -150,8 +152,8 @@ body {
 }
 
 .btn--white {
-  background-color: #fff;
-  color: #333;
+  background-color: $color-white;
+  color: $color-grey-dark-1;
 }
 
 .btn::after {
@@ -168,7 +170,7 @@ body {
 }
 
 .btn--white::after {
-  background-color: #fff;
+  background-color: $color-white;
 }
 
 .btn:hover::after {
