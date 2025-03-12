@@ -1,0 +1,58 @@
+@use "../abstracts/variables" as vars;
+
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 1.6rem; /* Increased font size */
+    font-weight: 300;
+    padding: 1rem 3rem; /* Adjusted padding to make the button larger */
+    border-radius: 2rem;
+    text-decoration: none;
+    border: 0.2rem solid transparent;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(vars.$color-grey-dark-1, 0.2); /* Corrected usage of SCSS variable with namespace */
+
+    &::after {
+      transform: scale(1.5) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px);
+  }
+
+  &--white {
+    background-color: vars.$color-white; // Corrected usage of SCSS variable with namespace
+    color: vars.$color-grey-dark-1; // Corrected usage of SCSS variable with namespace
+
+    &::after {
+      background-color: vars.$color-white; // Corrected usage of SCSS variable with namespace
+    }
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &--animated {
+    animation: moveInBottom 1.5s ease-out;
+    animation-fill-mode: backwards;
+  }
+}
